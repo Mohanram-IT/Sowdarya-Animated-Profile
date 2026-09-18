@@ -36,21 +36,21 @@ const ProjectCard = ({ exp, index }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className="relative block bg-white/5 backdrop-blur-xl rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 group cursor-pointer hover:bg-white/10 transition-colors duration-500"
+      className="relative block bg-white rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 group cursor-pointer hover:shadow-[0_20px_60px_rgba(0,0,0,0.2)] transition-shadow duration-500"
     >
       {/* Image Banner with Hover Overlay */}
       <div style={{ transform: "translateZ(40px)" }} className="relative h-56 md:h-64 overflow-hidden rounded-t-[2.5rem]">
-        <div className={`absolute inset-0 bg-gradient-to-tr ${exp.color} mix-blend-overlay z-10 opacity-80 group-hover:opacity-40 transition-opacity duration-500`}></div>
+        <div className={`absolute inset-0 bg-gradient-to-tr ${exp.color} mix-blend-overlay z-10 opacity-70 group-hover:opacity-40 transition-opacity duration-500`}></div>
         <img src={exp.image} alt={exp.title} className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000" />
         
         <div className="absolute top-5 right-5 z-20">
-          <span className="flex items-center gap-2 text-xs font-bold text-white bg-black/50 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-white/20">
+          <span className="flex items-center gap-2 text-xs font-bold text-white bg-black/40 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-white/20">
             <Calendar size={14} /> {exp.date}
           </span>
         </div>
 
         {/* View Details Overlay */}
-        <div className="absolute inset-0 z-30 flex items-center justify-center bg-slate-900/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        <div className="absolute inset-0 z-30 flex items-center justify-center bg-slate-900/30 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
            <span className="flex items-center gap-2 bg-white text-slate-900 font-bold px-6 py-3 rounded-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 shadow-2xl">
              View Details <ArrowRight size={18} />
            </span>
@@ -58,23 +58,23 @@ const ProjectCard = ({ exp, index }) => {
       </div>
 
       {/* Content */}
-      <div style={{ transform: "translateZ(30px)" }} className="p-8 md:p-10 relative">
+      <div style={{ transform: "translateZ(30px)" }} className="p-8 md:p-10 relative bg-white">
         <div className="flex items-center gap-2 mb-6">
-          <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r ${exp.color} bg-opacity-10 text-transparent bg-clip-text font-black text-xs uppercase tracking-widest border border-white/10`}>
-            <TrendingUp size={14} className="text-slate-300" /> Business Impact
+          <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r ${exp.color} bg-opacity-10 text-transparent bg-clip-text font-black text-xs uppercase tracking-widest border border-slate-100`}>
+            <TrendingUp size={14} className="text-slate-700" /> Business Impact
           </span>
-          <span className="text-xs font-bold text-emerald-400">{exp.impact}</span>
+          <span className="text-xs font-bold text-slate-500">{exp.impact}</span>
         </div>
         
-        <h3 className={`text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r ${exp.color} mb-2 drop-shadow-md`}>{exp.title}</h3>
-        <h4 className="text-lg font-bold text-slate-300 mb-8 flex items-center gap-2">
-          <Building2 size={18} className="text-slate-500" /> {exp.company}
+        <h3 className={`text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r ${exp.color} mb-2 drop-shadow-sm`}>{exp.title}</h3>
+        <h4 className="text-lg font-bold text-slate-700 mb-8 flex items-center gap-2">
+          <Building2 size={18} className="text-slate-400" /> {exp.company}
         </h4>
         
         <ul className="space-y-4">
           {exp.description.map((item, i) => (
-            <li key={i} className="flex items-start text-slate-400 text-sm md:text-base font-light">
-              <span className={`w-2 h-2 mt-2 mr-4 rounded-full bg-gradient-to-r ${exp.color} shrink-0 shadow-[0_0_10px_rgba(255,255,255,0.5)]`}></span>
+            <li key={i} className="flex items-start text-slate-600 text-sm md:text-base font-medium">
+              <span className={`w-2 h-2 mt-2 mr-4 rounded-full bg-gradient-to-r ${exp.color} shrink-0`}></span>
               <span className="leading-relaxed">{item}</span>
             </li>
           ))}
@@ -91,7 +91,7 @@ const Experience = () => {
       company: "Vyrex Technologies",
       date: "Sept 2026 – Present",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-      color: "from-cyan-400 to-blue-500",
+      color: "from-cyan-500 to-blue-600",
       impact: "Data Quality & Reporting timelines",
       description: [
         "Selected for a remote internship applying data analysis and reporting skills to live business projects.",
@@ -104,7 +104,7 @@ const Experience = () => {
       company: "TNJFU – OMR Campus",
       date: "2024 – 2025",
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-      color: "from-fuchsia-400 to-pink-500",
+      color: "from-fuchsia-500 to-pink-600",
       impact: "25% YoY Growth in Participation",
       description: [
         "Planned and executed logistics for campus-wide events, effectively managing budgets and schedules.",
@@ -117,7 +117,7 @@ const Experience = () => {
       company: "LifeCell International",
       date: "May 2026 – July 2026",
       image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80",
-      color: "from-emerald-400 to-teal-500",
+      color: "from-emerald-500 to-teal-600",
       impact: "Strict Protocol Adherence",
       description: [
         "Applied PCR-based molecular diagnostics for Mycoplasma/Ureaplasma detection.",
@@ -130,7 +130,7 @@ const Experience = () => {
       company: "Institute of Fisheries Bio.",
       date: "Academic Term",
       image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80",
-      color: "from-orange-400 to-rose-500",
+      color: "from-orange-500 to-rose-500",
       impact: "Standardized Workflows",
       description: [
         "Standardized multi-step workflows for consistent, QC-ready results — a direct parallel to business process mapping.",
@@ -141,10 +141,10 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 bg-[#0a0f1c] relative overflow-hidden" style={{ perspective: "1000px" }}>
+    <section id="experience" className="py-24 bg-slate-50 relative overflow-hidden" style={{ perspective: "1000px" }}>
       {/* Decorative colorful background shapes */}
-      <div className="absolute top-40 left-0 w-[600px] h-[600px] bg-fuchsia-600/10 rounded-full blur-[120px] -z-10 pointer-events-none mix-blend-screen"></div>
-      <div className="absolute bottom-40 right-0 w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[120px] -z-10 pointer-events-none mix-blend-screen"></div>
+      <div className="absolute top-40 left-0 w-[500px] h-[500px] bg-pink-300/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+      <div className="absolute bottom-40 right-0 w-[500px] h-[500px] bg-cyan-300/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <motion.div 
@@ -154,8 +154,8 @@ const Experience = () => {
           transition={{ duration: 0.8 }}
           className="mb-20 md:text-center"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 mb-6 inline-block tracking-tight drop-shadow-sm">Experience & Projects.</h2>
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-light">My journey from the lab to operations and leadership.</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600 mb-6 inline-block tracking-tight drop-shadow-sm">Experience & Projects.</h2>
+          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-medium">My journey from the lab to operations and leadership.</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">

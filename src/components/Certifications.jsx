@@ -15,7 +15,7 @@ const Certifications = () => {
     <section className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">Certifications</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4">Certifications</h2>
           <p className="text-lg text-slate-600">Continuous learning and professional development.</p>
         </div>
 
@@ -33,7 +33,7 @@ const Certifications = () => {
                 <Award size={24} />
               </div>
               <div>
-                <h3 className="font-semibold text-navy-900 leading-tight mb-2 group-hover:text-teal-700 transition-colors">{cert.title}</h3>
+                <h3 className="font-bold text-slate-800 leading-tight mb-2 group-hover:text-teal-700 transition-colors">{cert.title}</h3>
                 <p className="text-sm text-slate-500 mb-1">{cert.issuer}</p>
                 <p className="text-xs font-medium text-slate-400">{cert.year}</p>
               </div>
